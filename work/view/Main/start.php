@@ -1,4 +1,4 @@
-<body>
+<body style="height: 500px;">
 <ul class="tasks">
     <li class="task" data-id="3">
         <div class="task__content">
@@ -16,20 +16,20 @@
 <link href="<?=SITE?>lib/css/context-menu.css" rel="stylesheet" type="text/css">
 </body>
 
-<nav class="context-menu" id="context-menu">
+<nav id="context-menu" class="context-menu">
     <ul class="context-menu__items">
         <li class="context-menu__item">
-            <a href="#" class="context-menu__link">
+            <a href="#" class="context-menu__link" data-action="View">
                 <i class="fa fa-eye"></i> View Task
             </a>
         </li>
         <li class="context-menu__item">
-            <a href="#" class="context-menu__link">
+            <a href="#" class="context-menu__link" data-action="Edit">
                 <i class="fa fa-edit"></i> Edit Task
             </a>
         </li>
         <li class="context-menu__item">
-            <a href="#" class="context-menu__link">
+            <a href="#" class="context-menu__link" data-action="Delete">
                 <i class="fa fa-times"></i> Delete Task
             </a>
         </li>

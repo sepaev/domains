@@ -20,13 +20,13 @@
 
 .context-menu {
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 10;
-    height: 100px;
-    width: 100px;
+
+
 }
 
 .context-menu--active {
     display: block;
-    color: black;
+    background: lightgrey;
 }

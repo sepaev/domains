@@ -41,8 +41,10 @@ function contextListener() {
         if (taskItemInContext) {
             e.preventDefault();
             toggleMenuOn();
-            positionMenu(e);
+
+
         } else {
+
             taskItemInContext = null;
             toggleMenuOff();
         }
@@ -54,6 +56,7 @@ function contextMenuListener(el) {
     el.addEventListener("contextmenu", function (e) {
         e.preventDefault();
         toggleMenuOn();
+        positionMenu(e);
     });
 }
 
@@ -150,8 +153,10 @@ function positionMenu(e) {
     }
 
     if ((windowHeight - clickCoordsY) < menuHeight) {
+        alert(menuHeight)
         document.querySelector("#context-menu").style.top = windowHeight - menuHeight + "px";
     } else {
+
         document.querySelector("#context-menu").style.top = clickCoordsY + "px";
     }
 }
