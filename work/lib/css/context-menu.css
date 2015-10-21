@@ -1,0 +1,32 @@
+/* tasks */
+
+.tasks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: solid 1px #dfdfdf;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+
+.context-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    height: 100px;
+    width: 100px;
+}
+
+.context-menu--active {
+    display: block;
+    color: black;
+}
