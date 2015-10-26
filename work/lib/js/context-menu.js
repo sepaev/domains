@@ -3,7 +3,7 @@ var contextMenuItemClassName = "context-menu__item";
 var contextMenuLinkClassName = "context-menu__link";
 var contextMenuActive = "context-menu--active";
 
-var taskItemClassName = "task";
+var taskItemClassName = "form-control";
 var taskItemInContext;
 
 var clickCoords;
@@ -27,7 +27,7 @@ var active = "context-menu--active";
 
 "use strict";
 
-var taskItems = document.querySelectorAll(".task");
+var taskItems = document.querySelectorAll(".form-control");
 
 for (var i = 0, len = taskItems.length; i < len; i++) {
     var taskItem = taskItems[i];
@@ -64,6 +64,7 @@ function toggleMenuOn() {
     if (menuState !== 1) {
         menuState = 1;
         document.querySelector("#context-menu").classList.add(contextMenuActive);
+
     }
 }
 
@@ -75,6 +76,7 @@ function toggleMenuOff() {
 }
 
 function clickInsideElement(e, className) {
+    alert();
     var el = e.srcElement || e.target;
 
     if (el.classList.contains(className)) {
