@@ -1,24 +1,26 @@
 
-<script src="<?=SITE?>lib/js/context-menu.js"></script>
-<link href="<?=SITE?>lib/css/context-menu.css" rel="stylesheet" type="text/css">
+<script src="<?=SITE?>lib/js/dropdown-menu.js"></script>
 
+<nav id="dropdown-menu" class="dropdown-menu">
+<!--    <ul class="dropdown-menu__items">-->
+        <li class="dropdown-menu__item">
+            <a href="#" class="dropdown-menu__link" id="like"></a>
+        </li>
+    <li class="dropdown-menu__item">
+        <a href="#" class="dropdown-menu__link" id="notlike"></a>
+    </li>
+    <li class="dropdown-menu__item">
+        <a href="#" class="dropdown-menu__link" id="more"></a>
+    </li>
+    <li class="dropdown-menu__item">
+        <a href="#" class="dropdown-menu__link" id="less"></a>
+    </li>
 
-<nav id="context-menu" class="context-menu">
-    <ul class="context-menu__items">
-        <li class="context-menu__item">
-            <a href="#" class="context-menu__link" data-action="direct">
-                <i class="fa fa-eye"></i> View Task
+    <li class="divider"></li>
+        <li class="dropdown-menu__item">
+            <a href="#" class="dropdown-menu__link" id="clear">
+                Очистить фильтр
             </a>
         </li>
-        <li class="context-menu__item">
-            <a href="#" class="context-menu__link" data-action="like">
-                <i class="fa fa-edit"></i> Edit Task
-            </a>
-        </li>
-        <li class="context-menu__item">
-            <a href="#" class="context-menu__link" data-action="notLike">
-                <i class="fa fa-times"></i> Delete Task
-            </a>
-        </li>
-    </ul>
+<!--    </ul>-->
 </nav>

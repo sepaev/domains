@@ -70,18 +70,22 @@ class DB implements IDB
                     case "Key":
                     case "Kod_but":
                     case "Ves_iz":
-                        $text = $text . "`$key` = $value AND ";
+                        $sign = explode("'", $value);
+                        $text = $text . "`$key` $sign[0] $sign[1] AND ";
+                        echo $text;
                         break;
                     case "Date_but":
                     case "Date_zav":
                     case "Date_prod":
-                        $tmp = explode('-', $value);
-                        $text = $text . "`$key` = #$tmp[1]/$tmp[2]/$tmp[0]# AND ";
+                        $sign = explode("'", $value);
+                        $tmp = explode('-', $sign[1]);
+                        $text = $text . "`$key` $sign[0] #$tmp[1]/$tmp[2]/$tmp[0]# AND ";
+
                         break;
                     default:
-                        $text = $text . "`$key` = '$value' AND ";
+                        $text = $text . "`$key`$value' AND ";
                 }
-
+ // запрос типа SELECT * FROM `а√лавна€` WHERE `Kvitan_but` = '0054' and `Kod_but` <> 3
             }
             $text = rtrim($text, "AND ");
         }

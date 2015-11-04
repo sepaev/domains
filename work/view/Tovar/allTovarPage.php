@@ -3,7 +3,7 @@
 
 <form id="top" class="navbar-form">
     <?php
-    if ($args != NULL) {
+    if ($args['result'] != NULL) {
     ?>
     <!--    <table class="table table-bordered table-hover">-->
     <table class=" table-bordered table-hover ">
@@ -42,6 +42,7 @@
         echo "Запрос: ".$args['sys']['sql'];
 //        echo "<pre>";
 //        print_r($args);
+
         foreach ($args['result'] as $key => $value) {
             if ($value == "limit") {
                 break;
@@ -93,9 +94,8 @@
         }
         } else {
             ?>
-            <tr>
-                ПО ДАНОМУ ЗАПРОСУ ОТСУТСТВУЕТ ИНФОРМАЦИЯ
-            </tr>
+            <h1>По такому запросу ничего не найдено</h1>
+
             <?php
         }
         ?></table>
