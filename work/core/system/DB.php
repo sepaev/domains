@@ -57,9 +57,12 @@ class DB implements IDB
         // массив критериев
         if (isset($where) and $where != "") {
             $text .= "WHERE ";
-//            echo $where.'<br>';
-            foreach ($where as $key => $value) {
-                switch ($key) {
+//            echo count($where);
+            for ($i=0;$i<count($where);$i++){
+                $value = $where[$i]['value'];
+                $sign = $where[$i]['sign'];
+                $param = $where[$i]['param'];
+                switch ($param) {
                     case "Cost_but":
                     case "Cost_zav":
                     case "Price_but":
@@ -70,24 +73,24 @@ class DB implements IDB
                     case "Key":
                     case "Kod_but":
                     case "Ves_iz":
-                        $sign = explode("'", $value);
-                        $text = $text . "`$key` $sign[0] $sign[1] AND ";
-                        echo $text;
+                        $text = $text . "`$param` $sign $value AND ";
+
                         break;
                     case "Date_but":
                     case "Date_zav":
                     case "Date_prod":
-                        $sign = explode("'", $value);
-                        $tmp = explode('-', $sign[1]);
-                        $text = $text . "`$key` $sign[0] #$tmp[1]/$tmp[2]/$tmp[0]# AND ";
+                        $tmp = explode('-', $value);
+                        $text = $text . "`$param` $sign #$tmp[1]/$tmp[2]/$tmp[0]# AND ";
 
                         break;
                     default:
-                        $text = $text . "`$key`$value' AND ";
+                        $text = $text . "`$param` $sign '$value' AND ";
                 }
  // запрос типа SELECT * FROM `а√лавна€` WHERE `Kvitan_but` = '0054' and `Kod_but` <> 3
             }
+
             $text = rtrim($text, "AND ");
+//            echo $text;
         }
 //        } else {
 //            $text = $text . "1 ";

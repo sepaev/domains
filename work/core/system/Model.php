@@ -39,7 +39,7 @@ class Model
             $text = html_entity_decode($_GET['where']);
             $text = explode(";", $text);
             //todo разделение
-
+            $i=0;
             foreach ($text as $key => $value) {
                 $tmp=null;
                 $some=null;
@@ -88,7 +88,10 @@ class Model
                 if ($decoded) {
                     $tmp[1] = $decoded;
                 }
-                $this->where[$tmp[0]] = $sign."'".$tmp[1];
+                $this->where[$i]['param'] = $tmp[0];
+                $this->where[$i]['sign'] = $sign;
+                $this->where[$i]['value'] = $tmp[1];
+                $i++;
             }
 
         } else {
