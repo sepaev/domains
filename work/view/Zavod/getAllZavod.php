@@ -8,9 +8,10 @@
         <th>Примечание</th>
         <th>Сайт</th>
     </tr>
+
     <?php
-    //      var_dump($args);
-    foreach ($args as $key => $value) {
+//          var_dump($args);
+    foreach ($args['result'] as $key => $value) {
         ?>
         <tr id="<?= $value["Kod_zav"] ?>">
             <td><input type="text" value=' <?= $value["Kod_zav"] ?>' class="form-control"></td>

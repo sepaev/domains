@@ -62,7 +62,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="position: fixed; margin-left: 300px">
             <?php if (!$_SESSION['login']) { ?>
             <ul class="nav navbar-nav">
-                <li><a href="<?=SITE?>exit">Очистить сессию</a></li>
+                <li><a href="<?=SITE?>main/logout">Очистить сессию</a></li>
             </ul>
             <?php } else { ?>
             <ul class="nav navbar-nav">

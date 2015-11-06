@@ -8,7 +8,7 @@
     <?php
 //      var_dump($args);
 
-    foreach ($args as $key => $value) {
+    foreach ($args['result'] as $key => $value) {
         ?>
             <tr id="<?= $value["kod_but2"] ?>">
                 <td><input type="text" value=" <?= $value["kod_but2"] ?>" class="form-control"></td>
